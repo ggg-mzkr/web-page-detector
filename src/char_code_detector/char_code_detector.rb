@@ -12,7 +12,7 @@ class CharCodeDetector
       begin
         code = d.detect(responce)
         # code が @codes に含まれるか，大文字小文字区別無しでチェック.
-        return code if @codes.inject(false) { |m, c| m || code.casecmp(c) }
+        return code if @codes.inject(false) { |m, c| m || code.casecmp(c).zero? }
       rescue DetectFailedException
         next
       end

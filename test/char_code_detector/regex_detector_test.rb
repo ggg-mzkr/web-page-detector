@@ -9,7 +9,7 @@ class RegexDetectorTest < Minitest::Test
   end
 
   def test_detect_uft8
-    data_set = %w[uft8 UTF8 UtF8]
+    data_set = %w[uft-8 UTF-8 UtF-8]
     data_set.each do |d|
       assert_equal d, @sut.detect('<meta charset="' + d + '">')
     end
