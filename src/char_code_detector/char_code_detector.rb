@@ -1,11 +1,9 @@
 require_relative './regex_detector'
-require_relative './encoding_detector'
 
 class CharCodeDetector
 
   def initialize
-    @detectors = [RegexDetector.new,
-                  EncodingDetector.new]
+    @detectors = [RegexDetector.new]
     @codes = %w[UTF-8 EUC-JP Shift-JIS]
   end
 
