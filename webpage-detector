@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 
-require_relative './web_page_detector/web_page_detector'
+require_relative 'src/web_page_detector/web_page_detector'
 
 w_detector = WebPageDetector.new
 
