@@ -1,0 +1,2 @@
+class DetectFailedException < RuntimeError
+end

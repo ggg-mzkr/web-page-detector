@@ -1,0 +1,11 @@
+#! /usr/bin/env ruby
+
+require_relative './web_page_detector/web_page_detector'
+
+w_detector = WebPageDetector.new
+
+ARGV.each_with_index do |url, i|
+  page = w_detector.detect_web_page(url)
+  print(page)
+  print("\n") unless i == ARGV.length - 1
+end
