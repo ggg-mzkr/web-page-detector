@@ -3,7 +3,7 @@ require_relative 'detect_failed_exception'
 class RegexDetector
 
   def initialize
-    @regex = /charset="?(?<code>[a-zA-Z0-9_-]+)"?/
+    @regex = %r{charset="?(?<code>[a-zA-Z0-9_-]+)"?}i
   end
 
   def detect(responce)

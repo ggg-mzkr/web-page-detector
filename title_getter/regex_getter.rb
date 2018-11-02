@@ -3,7 +3,7 @@ require_relative './get_title_failed_exception'
 class RegexGetter
 
   def initialize
-    @regex = %r{[<]title[>](?<title>.+)[<]\/title[>]}
+    @regex = %r{[<]title[>](?<title>.+)[<]\/title[>]}i
   end
 
   def get_title(responce)

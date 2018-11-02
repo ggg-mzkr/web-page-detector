@@ -11,7 +11,11 @@ class WebPageDetector
   end
 
   def detect_web_page(url)
-    responce = Net::HTTP.get(URI.parse(url))
+    begin
+      responce = Net::HTTP.get(URI.parse(URI.escape(url)))
+    rescue SocketError
+      return "url: #{url}\n" + "接続に失敗\n"
+    end
 
     begin
       title = @t_getter.get_title(responce)
